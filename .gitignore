@@ -16,11 +16,6 @@ yarn-debug.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Environment variable files
-.env
-.env.local
-.env.*.local
-
 # Optional npm cache directory
 .npm
 
@@ -68,26 +63,3 @@ out/
 # Ignore build files
 build/
 dist/
-
-# Ignore docker files
-docker-compose.override.yml
-Dockerfile
-
-# Ignore AWS SAM build artifacts
-.aws-sam/build/
-
-# Ignore AWS CDK asset staging directory
-cdk.out/
-
-# Ignore Serverless Framework build artifacts
-.serverless/
-
-# Ignore GitHub Action workflows
-.github/workflows/
-
-# Ignore Nx (Nrwl) workspace output
-dist/
-tmp/
-
-# Ignore Lerna debugging log
-lerna-debug.log
