@@ -5,9 +5,6 @@ services:
     container_name: book-service-db
     volumes:
       - mongo-data:/data/db
-    # Uncomment the below lines to expose the port
-    # ports:
-    #   - "27017:27017"
     networks:
       - app-network
 
@@ -15,9 +12,8 @@ services:
     build: ./book-service
     image: book-service:latest
     container_name: book-service
-    # Uncomment the below lines to expose the port
-    # ports:
-    #   - 3000:3000
+    ports:
+      - 3000:3000
     networks:
       - app-network
     environment:
@@ -29,16 +25,12 @@ services:
     build: ./loan-service
     image: loan-service:latest
     container_name: loan-service
-    # Uncomment the below lines to expose the port
-    # ports:
-    #   - 3001:3001
+    ports:
+      - 3001:3001
     networks:
       - app-network
     environment:
       - BOOK_SERVICE_URL=http://book-service:3000/books
-    depends_on:
-      - book-service-db
-      - book-service
 
   nginx:
     image: nginx:latest

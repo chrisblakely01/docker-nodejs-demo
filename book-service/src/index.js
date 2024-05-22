@@ -10,23 +10,9 @@ dotenv.config();
 
 dbStart();
 
-// const books = [
-//   { id: 1, title: "1984", author: "George Orwell" },
-//   {
-//     id: 2,
-//     title: "Brave New World",
-//     author: "Aldous Huxley",
-//   },
-//   {
-//     id: 3,
-//     title: "The Catcher in the Rye",
-//     author: "J.D. Salinger",
-//   },
-// ];
-
 app.get("/books", async (req, res) => {
   const books = await Book.find({});
-  res.json({ ...books, version: "v5" });
+  res.json(books);
 });
 
 app.listen(port, () => {
