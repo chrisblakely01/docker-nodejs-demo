@@ -1,0 +1,50 @@
+# version: "3.8"
+services:
+  book-service-db:
+    image: mongo:latest
+    container_name: book-service-db
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+  book-service:
+    image: jschris/book-service:v1
+    container_name: book-service
+    networks:
+      - app-network
+    environment:
+      - DATABASE_URL=mongodb://book-service-db:27017/books
+    depends_on:
+      - book-service-db
+    pull_policy: always
+  loan-service:
+    image: jschris/loan-service:v1
+    container_name: loan-service
+    networks:
+      - app-network
+    environment:
+      - BOOK_SERVICE_URL=http://book-service:3000/books
+    pull_policy: always
+    depends_on:
+      - book-service-db
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - app-network
+    depends_on:
+      - book-service
+      - loan-service
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge

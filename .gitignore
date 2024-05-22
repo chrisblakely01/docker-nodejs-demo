@@ -1,0 +1,93 @@
+# Node.js specific
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microservice-specific directories
+**/node_modules
+**/dist
+**/build
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific
+Thumbs.db
+.DS_Store
+
+# Test coverage
+coverage/
+**/coverage/
+
+# TypeScript
+*.tsbuildinfo
+**/tsconfig.tsbuildinfo
+
+# Optional Stylelint cache
+.stylelintcache
+
+# Ignore IntelliJ IDEA project files
+*.iml
+.idea/
+out/
+
+# Ignore temporary files
+*.swp
+*.bak
+*.tmp
+*.temp
+
+# Ignore build files
+build/
+dist/
+
+# Ignore docker files
+docker-compose.override.yml
+Dockerfile
+
+# Ignore AWS SAM build artifacts
+.aws-sam/build/
+
+# Ignore AWS CDK asset staging directory
+cdk.out/
+
+# Ignore Serverless Framework build artifacts
+.serverless/
+
+# Ignore GitHub Action workflows
+.github/workflows/
+
+# Ignore Nx (Nrwl) workspace output
+dist/
+tmp/
+
+# Ignore Lerna debugging log
+lerna-debug.log
