@@ -17,10 +17,16 @@ const loans = [
   },
 ];
 
+// set the endpoint of the bookService
+// if running the app outside of docker compose, will default to localhost:3000
+// if running the app as part of docker compose, will take the environment variable
+const bookServiceEndpoint =
+  process.env.BOOK_SERVICE_URL || "http://localhost:3000";
+
 app.get("/loans", async (req, res) => {
   try {
     // fetch the books from the book service
-    const response = await fetch(`${process.env.BOOK_SERVICE_URL}`);
+    const response = await fetch(`${bookServiceEndpoint}/books`);
     if (!response.ok) {
       throw new Error("Failed to fetch books");
     }
