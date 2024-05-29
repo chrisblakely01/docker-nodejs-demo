@@ -20,7 +20,7 @@ const loans = [
 app.get("/loans", async (req, res) => {
   try {
     // fetch the books from the book service
-    const response = await fetch(`${process.env.BOOK_SERVICE_URL}`);
+    const response = await fetch(`${process.env.BOOK_SERVICE_URL}/books`);
     if (!response.ok) {
       throw new Error("Failed to fetch books");
     }

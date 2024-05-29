@@ -30,7 +30,7 @@ services:
     networks:
       - app-network
     environment:
-      - BOOK_SERVICE_URL=http://book-service:3000/books
+      - BOOK_SERVICE_URL=http://book-service:3000
 
 volumes:
   mongo-data:
