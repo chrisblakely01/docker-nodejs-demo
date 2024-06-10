@@ -36,6 +36,7 @@ To get the starter code for Part-1, switch to the `part-1` branch:
 
 ```bash
 git checkout part-1
+npm i
 ```
 
 This branch contains the initial setup for the course, including creating Docker images and containers.
@@ -46,6 +47,7 @@ To get the starter code for Part-2, switch to the `part-2` branch:
 
 ```bash
 git checkout part-2
+npm i
 ```
 
 This branch builds on Part-1 and covers using Docker Compose to manage multiple containers.
@@ -56,6 +58,7 @@ To get the starter code for Part-3, switch to the `part-3` branch:
 
 ```bash
 git checkout part-3
+npm i
 ```
 
 In this part, you will learn about running Nginx and setting up networking between containers.
@@ -66,6 +69,7 @@ To get the starter code for Part-4, switch to the `part-4` branch:
 
 ```bash
 git checkout part-4
+npm i
 ```
 
 This final part includes managing databases within Docker and advanced networking concepts.
